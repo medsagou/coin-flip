@@ -124,6 +124,9 @@ body {
   justify-content: center;
   margin-bottom: 2rem;
 }
+.star-container:hover{
+  cursor: pointer;
+}
 .star-container > img {
   max-width: 100%;
 }
@@ -405,7 +408,7 @@ button {
   border-color: #e1e0ee;
   color: #101020;
 }
-#reset-button {
+/* #reset-button {
   background-color: #674706;
   color: white;
-}
+} */

@@ -56,21 +56,34 @@ let flipBtn = document.querySelector("#flip-button");
 let resetBtn = document.querySelector("#reset-button");
 
 flipBtn.addEventListener("click", () => {
-  console.log();
+  // console.log();
   //   let i = Math.floor(Math.random() * 2);
-  let i = Math.round(Math.random());
-  coin.style.animation = "none";
-  if (i) {
-    setTimeout(function () {
-      coin.style.animation = "spin-heads 3s forwards";
-    }, 100);
-    heads++;
-  } else {
+  if (heads > tails +1 && heads + tails > 15){
     setTimeout(function () {
       coin.style.animation = "spin-tails 3s forwards";
     }, 100);
     tails++;
+  }else if (tails > heads + 1 && heads + tails > 15){
+    setTimeout(function () {
+      coin.style.animation = "spin-heads 3s forwards";
+    }, 100);
+    heads++;
+  }else{
+    let i = Math.round(Math.random());
+    coin.style.animation = "none";
+    if (i) {
+      setTimeout(function () {
+        coin.style.animation = "spin-heads 3s forwards";
+      }, 100);
+      heads++;
+    } else {
+      setTimeout(function () {
+        coin.style.animation = "spin-tails 3s forwards";
+      }, 100);
+      tails++;
+    }
   }
+  
   setTimeout(updateStats, 3000);
   disableButton();
 });
